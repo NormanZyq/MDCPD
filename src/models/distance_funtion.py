@@ -99,8 +99,6 @@ class DistanceFunction:
                 np.abs((difference_list[0] - self.stored_result[-1]) / self.stored_result[-1])]  # cr: change rate
             last = difference_list[0]
             for i in range(1, len(difference_list)):
-                # todo 这里是不是写错了，是不是应该是`difference_list[i]`而不是self.stored_result[i]
-                #   现在先改掉了，如果不正确的话再改回去
                 distance = difference_list[i]
                 cr_list_incremental.append(np.abs((distance - last) / last))
                 last = distance
